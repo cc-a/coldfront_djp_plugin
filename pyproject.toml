@@ -1,0 +1,28 @@
+[project]
+name = "coldfront-djp-plugin"
+version = "0.1"
+description = "A an example plugin for coldfront using djp"
+readme = "README.md"
+authors = [{ name = "Christopher Cave-Ayland" }]
+license = { text = "Apache-2.0" }
+classifiers = ["License :: OSI Approved :: Apache Software License"]
+dependencies = ["coldfront", "django", "djp"]
+
+[project.urls]
+Homepage = "https://github.com/cc-a/coldfront-djp-plugin"
+Changelog = "https://github.com/cc-a/coldfront-djp-plugin/releases"
+Issues = "https://github.com/cc-a/coldfront-djp-plugin/issues"
+CI = "https://github.com/cc-a/coldfront-djp-plugin/actions"
+
+[project.entry-points.djp]
+coldfront_djp_plugin = "coldfront_djp_plugin"
+
+[tool.setuptools.package-data]
+"*" = ["*.html", "*.js", "*.css"]
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-django"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "tests.test_project.settings"
+pythonpath = ["."]
